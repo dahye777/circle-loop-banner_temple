@@ -277,4 +277,24 @@ figure .pop.on .close {
   transform: translateX(0px);
 }
 
+@media screen and (max-width: 1199px) {
+  figure .banner ul li:nth-of-type(4) {
+    transform: translateX(0px scale(0.7));
+  }
+  figure .banner ul li:nth-of-type(4) h2 {
+    top: -20vh;
+    font-size: 37vw;
+  }
+  figure .banner ul li:nth-of-type(4) a {
+    width: 100%;
+    bottom: -25%;
+  }
+  figure .btns {
+    width: 100%;
+    bottom: 6vh;
+    justify-content: center;
+    right: 0vw;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
