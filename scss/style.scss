@@ -160,13 +160,17 @@ figure{
                             opacity: 1;
                             text-indent: 0px;
                         }
+
+                        &.off{
+                            opacity: 0;
+                        }
                     }
                 }
                 &:nth-of-type(5){
                     transform: translateX(($size) )scale(0.6);
                     .inner::after, 
                     .inner::before{
-                        transform: rotate($deg);
+                        transform: rotate($deg * 1);
                     }
                 }
                 &:nth-of-type(6){
@@ -207,6 +211,71 @@ figure{
             color: #fff;
             &:hover{
                 background-color: #555;
+            }
+        }
+
+        &.off{
+            right: 5vw;
+            opacity: 0;
+        }
+    }
+
+    .pop{
+        width: 50vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -50vw;
+        background-color: rgba(0,0,0,0.05);
+        border-right: 1px solid rgba(0,0,0,0.02);
+        backdrop-filter: blur(10px);
+        padding: 22vh 5vw 10vh 6vw;
+        transition: 0.5s;
+
+        h2{
+            font: 12vw/1 'anton';
+            color: #fff;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: 1s 0.3s;
+        }
+        p{
+            font: 22px/1.2 'arial';
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: 0.5s 0.8s;
+        }
+        .close{
+            width: 200px;
+            height: 40px;
+            border: 2px solid #fff;
+            font: bold 14px/1 'arial';
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+
+            &:hover{
+                background-color: #fff;
+                color: #777;
+            }
+        }
+
+        &.on{
+            left: 0;
+
+            h2,
+            p,
+            .close{
+                opacity: 1;
+                transform: translateX(0px);
             }
         }
     }
